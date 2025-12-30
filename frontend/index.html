@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakey - Shared Alarm App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+    <!-- Auth Screen -->
+    <div id="auth-screen" class="screen active">
+        <div class="container">
+            <div class="auth-box">
+                <h1 class="logo">⏰ Wakey</h1>
+                <p class="tagline">Wake up together, stay accountable</p>
+                
+                <div class="tabs">
+                    <button class="tab active" data-tab="login">Login</button>
+                    <button class="tab" data-tab="signup">Sign Up</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <input type="text" id="login-username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <div id="login-error" class="error-message"></div>
+                </form>
+
+                <!-- Signup Form -->
+                <form id="signup-form" class="auth-form">
+                    <div class="form-group">
+                        <input type="text" id="signup-username" placeholder="Choose a username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="signup-password" placeholder="Choose a password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                    <div id="signup-error" class="error-message"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Screen -->
+    <div id="dashboard-screen" class="screen">
+        <div class="navbar">
+            <h2>⏰ Wakey</h2>
+            <div class="nav-right">
+                <span id="username-display"></span>
+                <button id="logout-btn" class="btn btn-small">Logout</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="dashboard-tabs">
+                <button class="dash-tab active" data-view="alarms">My Alarms</button>
+                <button class="dash-tab" data-view="friends">Friends</button>
+                <button class="dash-tab" data-view="requests">Requests</button>
+            </div>
+
+            <!-- Alarms View -->
+            <div id="alarms-view" class="view active">
+                <div class="view-header">
+                    <h3>Your Alarms</h3>
+                    <button id="create-alarm-btn" class="btn btn-primary">+ Create Alarm</button>
+                </div>
+                <div id="alarms-list" class="alarms-list">
+                    <p class="empty-state">No alarms yet. Create one with a friend!</p>
+                </div>
+            </div>
+
+            <!-- Friends View -->
+            <div id="friends-view" class="view">
+                <div class="view-header">
+                    <h3>Your Friends</h3>
+                    <button id="search-users-btn" class="btn btn-primary">+ Add Friend</button>
+                </div>
+
+                <!-- Friends List -->
+                <div id="friends-list" class="friends-list">
+                    <p class="empty-state">No friends yet. Add some to create shared alarms!</p>
+                </div>
+            </div>
+
+            <!-- Requests View -->
+            <div id="requests-view" class="view">
+                <div class="view-header">
+                    <h3>Friend Requests</h3>
+                </div>
+
+                <div id="friend-requests-list" class="friends-list">
+                    <p class="empty-state">No pending friend requests</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Create Alarm -->
+    <div id="create-alarm-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create Alarm</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="create-alarm-form">
+                <div class="form-group">
+                    <label>Choose a Friend</label>
+                    <select id="alarm-friend-select" required>
+                        <option value="">Select a friend...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Alarm Time</label>
+                    <input type="time" id="alarm-time" required>
+                </div>
+                <div class="form-group">
+                    <label>Label</label>
+                    <input type="text" id="alarm-label" placeholder="e.g., Morning Workout" required>
+                </div>
+                <div class="form-group">
+                    <label>Sound</label>
+                    <select id="alarm-sound">
+                        <option value="firee">Fire (Energetic)</option>
+                        <option value="blinks">Blinks (Gentle)</option>
+                        <option value="manifestation">Manifestation (Calm)</option>
+                        <option value="getshitdone">Get Shit Done (Intense)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Agent Tone (Optional)</label>
+                    <select id="alarm-tone">
+                        <option value="">Auto (based on snoozes)</option>
+                        <option value="soft">Soft</option>
+                        <option value="playful">Playful</option>
+                        <option value="strict">Strict</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Alarm</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Search Users -->
+    <div id="search-users-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Friend</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="form-group">
+                <input type="text" id="user-search-input" placeholder="Search by username...">
+            </div>
+            <div id="search-results" class="search-results">
+                <p class="empty-state">Start typing to search...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Alarm Ringing -->
+    <div id="alarm-ringing-modal" class="modal alarm-modal">
+        <div class="modal-content alarm-content">
+            <div class="alarm-header">
+                <h2 id="alarm-ringing-label">Wake Up!</h2>
+                <p id="alarm-ringing-time">07:00</p>
+            </div>
+            
+            <div class="alarm-partner">
+                <p>Waking up with: <strong id="alarm-partner-name"></strong></p>
+            </div>
+
+            <div id="agent-message-container" class="agent-message">
+                <!-- Agent message will appear here -->
+            </div>
+
+            <div class="alarm-actions">
+                <button id="alarm-snooze-btn" class="btn btn-warning">😴 Snooze</button>
+                <button id="alarm-acknowledge-btn" class="btn btn-success">✅ I'm Awake!</button>
+                <button id="alarm-cancel-btn" class="btn btn-danger">❌ Cancel</button>
+            </div>
+
+            <div class="snooze-info">
+                <p>Your snoozes: <span id="user-snooze-count">0</span></p>
+                <p>Friend's snoozes: <span id="friend-snooze-count">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

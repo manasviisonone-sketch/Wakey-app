@@ -1,0 +1,424 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "alice",
+      "password": "password123",
+      "createdAt": "2025-12-26T08:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "username": "bob",
+      "password": "password123",
+      "createdAt": "2025-12-26T08:05:00.000Z"
+    },
+    {
+      "id": 3,
+      "username": "charlie",
+      "password": "password123",
+      "createdAt": "2025-12-26T08:10:00.000Z"
+    },
+    {
+      "id": 4,
+      "username": "diana",
+      "password": "password123",
+      "createdAt": "2025-12-26T08:15:00.000Z"
+    },
+    {
+      "id": 5,
+      "username": "sara",
+      "password": "sara222",
+      "createdAt": "2025-12-26T21:39:38.485467"
+    },
+    {
+      "id": 6,
+      "username": "rayn",
+      "password": "111",
+      "createdAt": "2025-12-27T13:21:05.704845"
+    },
+    {
+      "id": 7,
+      "username": "sarah",
+      "password": "1234",
+      "createdAt": "2025-12-27T14:05:50.219914"
+    }
+  ],
+  "friendRequests": [
+    {
+      "id": 1,
+      "fromUserId": 3,
+      "toUserId": 4,
+      "status": "pending",
+      "createdAt": "2025-12-26T09:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "fromUserId": 1,
+      "toUserId": 2,
+      "status": "accepted",
+      "createdAt": "2025-12-26T08:30:00.000Z"
+    },
+    {
+      "id": 3,
+      "fromUserId": 6,
+      "toUserId": 5,
+      "status": "pending",
+      "createdAt": "2025-12-27T13:21:16.425843"
+    },
+    {
+      "id": 4,
+      "fromUserId": 5,
+      "toUserId": 6,
+      "status": "accepted",
+      "createdAt": "2025-12-27T13:21:34.935104"
+    },
+    {
+      "id": 5,
+      "fromUserId": 7,
+      "toUserId": 6,
+      "status": "accepted",
+      "createdAt": "2025-12-27T14:06:04.671873"
+    }
+  ],
+  "friendships": [
+    {
+      "id": 1,
+      "user1Id": 1,
+      "user2Id": 2,
+      "createdAt": "2025-12-26T08:35:00.000Z"
+    },
+    {
+      "id": 2,
+      "user1Id": 1,
+      "user2Id": 3,
+      "createdAt": "2025-12-26T08:40:00.000Z"
+    },
+    {
+      "id": 3,
+      "user1Id": 2,
+      "user2Id": 3,
+      "createdAt": "2025-12-26T08:45:00.000Z"
+    },
+    {
+      "id": 4,
+      "user1Id": 5,
+      "user2Id": 6,
+      "createdAt": "2025-12-27T13:25:34.666287"
+    },
+    {
+      "id": 5,
+      "user1Id": 7,
+      "user2Id": 6,
+      "createdAt": "2025-12-27T14:06:11.677025"
+    }
+  ],
+  "alarms": [
+    {
+      "id": 2,
+      "user1Id": 1,
+      "user2Id": 3,
+      "time": "08:30",
+      "label": "Study Session",
+      "sound": "getshitdone",
+      "tone": null,
+      "isActive": true,
+      "snoozeCount": {
+        "1": 0,
+        "3": 0
+      },
+      "acknowledged": [],
+      "cancelledBy": null,
+      "agentMessage": "",
+      "agentTone": "",
+      "cancelNotifyMessage": "",
+      "createdAt": "2025-12-26T09:15:00.000Z"
+    },
+    {
+      "id": 3,
+      "user1Id": 2,
+      "user2Id": 3,
+      "time": "06:00",
+      "label": "Early Rise!",
+      "sound": "manifestation",
+      "tone": null,
+      "isActive": true,
+      "snoozeCount": {
+        "2": 1,
+        "3": 0
+      },
+      "acknowledged": [
+        2
+      ],
+      "cancelledBy": null,
+      "agentMessage": "",
+      "agentTone": "",
+      "cancelNotifyMessage": "",
+      "createdAt": "2025-12-26T09:30:00.000Z"
+    },
+    {
+      "id": 4,
+      "user1Id": 7,
+      "user2Id": 6,
+      "time": "14:07",
+      "label": "gm",
+      "sound": "firee",
+      "tone": null,
+      "isActive": false,
+      "snoozeCount": {
+        "7": 0,
+        "6": 0
+      },
+      "acknowledged": [],
+      "cancelledBy": 6,
+      "agentMessage": "Alarm cancelled. Hope everything's okay! \ud83d\udc99",
+      "agentTone": "soft",
+      "cancelNotifyMessage": "Your friend had to cancel the alarm. Hope they're okay! \ud83d\udc99",
+      "createdAt": "2025-12-27T14:06:55.061905"
+    },
+    {
+      "id": 5,
+      "user1Id": 7,
+      "user2Id": 6,
+      "time": "14:08",
+      "label": "gm",
+      "sound": "firee",
+      "tone": null,
+      "isActive": true,
+      "snoozeCount": {
+        "7": 0,
+        "6": 0
+      },
+      "acknowledged": [],
+      "cancelledBy": null,
+      "agentMessage": "",
+      "agentTone": "",
+      "cancelNotifyMessage": "",
+      "createdAt": "2025-12-27T14:07:22.177220"
+    },
+    {
+      "id": 6,
+      "user1Id": 6,
+      "user2Id": 7,
+      "time": "14:08",
+      "label": "gm",
+      "sound": "firee",
+      "tone": null,
+      "isActive": true,
+      "snoozeCount": {
+        "6": 0,
+        "7": 0
+      },
+      "acknowledged": [],
+      "cancelledBy": null,
+      "agentMessage": "",
+      "agentTone": "",
+      "cancelNotifyMessage": "",
+      "createdAt": "2025-12-27T14:08:10.520517"
+    },
+    {
+      "id": 7,
+      "user1Id": 7,
+      "user2Id": 6,
+      "time": "14:25",
+      "label": "work",
+      "sound": "firee",
+      "tone": null,
+      "isActive": true,
+      "snoozeCount": {
+        "7": 0,
+        "6": 0
+      },
+      "acknowledged": [],
+      "cancelledBy": null,
+      "agentMessage": "",
+      "agentTone": "",
+      "cancelNotifyMessage": "",
+      "createdAt": "2025-12-27T14:24:43.668279"
+    },
+    {
+      "id": 8,
+      "user1Id": 7,
+      "user2Id": 6,
+      "time": "14:26",
+      "label": "d",
+      "sound": "firee",
+      "tone": null,
+      "isActive": true,
+      "snoozeCount": {
+        "7": 0,
+        "6": 0
+      },
+      "acknowledged": [],
+      "cancelledBy": null,
+      "agentMessage": "",
+      "agentTone": "",
+      "cancelNotifyMessage": "",
+      "createdAt": "2025-12-27T14:25:09.021856"
+    },
+    {
+      "id": 9,
+      "user1Id": 7,
+      "user2Id": 6,
+      "time": "14:28",
+      "label": "wrk",
+      "sound": "firee",
+      "tone": null,
+      "isActive": true,
+      "snoozeCount": {
+        "7": 0,
+        "6": 0
+      },
+      "acknowledged": [],
+      "cancelledBy": null,
+      "agentMessage": "",
+      "agentTone": "",
+      "cancelNotifyMessage": "",
+      "createdAt": "2025-12-27T14:26:47.083598"
+    },
+    {
+      "id": 10,
+      "user1Id": 6,
+      "user2Id": 7,
+      "time": "15:44",
+      "label": "wake",
+      "sound": "firee",
+      "tone": null,
+      "isActive": true,
+      "snoozeCount": {
+        "6": 0,
+        "7": 0
+      },
+      "acknowledged": [],
+      "cancelledBy": null,
+      "agentMessage": "",
+      "agentTone": "",
+      "cancelNotifyMessage": "",
+      "createdAt": "2025-12-27T15:42:51.914331"
+    },
+    {
+      "id": 11,
+      "user1Id": 6,
+      "user2Id": 7,
+      "time": "13:08",
+      "label": "wrk",
+      "sound": "firee",
+      "tone": null,
+      "isActive": true,
+      "snoozeCount": {
+        "6": 0,
+        "7": 0
+      },
+      "acknowledged": [],
+      "cancelledBy": null,
+      "agentMessage": "",
+      "agentTone": "",
+      "cancelNotifyMessage": "",
+      "createdAt": "2025-12-29T13:06:49.435817"
+    },
+    {
+      "id": 12,
+      "user1Id": 6,
+      "user2Id": 7,
+      "time": "13:15",
+      "label": "work",
+      "sound": "firee",
+      "tone": null,
+      "isActive": true,
+      "snoozeCount": {
+        "6": 0,
+        "7": 0
+      },
+      "acknowledged": [],
+      "cancelledBy": null,
+      "agentMessage": "",
+      "agentTone": "",
+      "cancelNotifyMessage": "",
+      "createdAt": "2025-12-29T13:12:51.344973"
+    },
+    {
+      "id": 13,
+      "user1Id": 6,
+      "user2Id": 7,
+      "time": "13:25",
+      "label": "work",
+      "sound": "firee",
+      "tone": null,
+      "isActive": false,
+      "snoozeCount": {
+        "6": 0,
+        "7": 1
+      },
+      "acknowledged": [
+        7
+      ],
+      "cancelledBy": 7,
+      "agentMessage": "Alarm cancelled. Hope everything's okay! \ud83d\udc99",
+      "agentTone": "soft",
+      "cancelNotifyMessage": "Your friend had to cancel the alarm. Hope they're okay! \ud83d\udc99",
+      "createdAt": "2025-12-29T13:22:19.288536"
+    },
+    {
+      "id": 14,
+      "user1Id": 6,
+      "user2Id": 7,
+      "time": "13:29",
+      "label": "work",
+      "sound": "firee",
+      "tone": null,
+      "isActive": false,
+      "snoozeCount": {
+        "6": 27,
+        "7": 0
+      },
+      "acknowledged": [
+        6,
+        7
+      ],
+      "cancelledBy": 7,
+      "agentMessage": "",
+      "agentTone": "",
+      "cancelNotifyMessage": "Your friend had to cancel the alarm. Hope they're okay! \ud83d\udc99",
+      "createdAt": "2025-12-29T13:28:33.901730"
+    },
+    {
+      "id": 14,
+      "user1Id": 6,
+      "user2Id": 7,
+      "time": "13:37",
+      "label": "check",
+      "sound": "baddie",
+      "tone": null,
+      "isActive": true,
+      "snoozeCount": {
+        "6": 0,
+        "7": 0
+      },
+      "acknowledged": [],
+      "cancelledBy": null,
+      "agentMessage": "",
+      "agentTone": "",
+      "cancelNotifyMessage": "",
+      "createdAt": "2025-12-29T13:36:24.987075"
+    },
+    {
+      "id": 15,
+      "user1Id": 7,
+      "user2Id": 6,
+      "time": "16:30",
+      "label": "eve",
+      "sound": "getshitdone",
+      "tone": null,
+      "isActive": false,
+      "snoozeCount": {
+        "7": 0,
+        "6": 0
+      },
+      "acknowledged": [],
+      "cancelledBy": 7,
+      "agentMessage": "Alarm cancelled. Hope everything's okay! \ud83d\udc99",
+      "agentTone": "soft",
+      "cancelNotifyMessage": "Your friend had to cancel the alarm. Hope they're okay! \ud83d\udc99",
+      "createdAt": "2025-12-29T16:30:07.604716"
+    }
+  ]
+}
