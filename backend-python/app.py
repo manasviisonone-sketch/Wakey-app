@@ -64,15 +64,8 @@ alarms = _db["alarms"]
 # Initialize Flask app
 app = Flask(__name__)
 
-# Configure CORS properly
-CORS(app, resources={
-    r"/api/*": {
-        "origins": ["http://localhost:8000", "http://127.0.0.1:8000"],
-        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        "allow_headers": ["Content-Type"],
-        "supports_credentials": True
-    }
-})
+# Simple CORS - allow everything
+CORS(app)
 
 # Initialize agent
 agent = WakeyAgent()
