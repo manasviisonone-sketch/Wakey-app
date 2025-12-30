@@ -1,5 +1,5 @@
 // ==================== CONFIG ====================
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'https://wakey-app.onrender.com/api';
 
 // ==================== STATE ====================
 let currentUser = null;
